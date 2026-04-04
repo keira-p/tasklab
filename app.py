@@ -1,5 +1,11 @@
+from pathlib import Path
 import streamlit as st
 import pandas as pd
+
+BASE_DIR = Path(__file__).resolve().parent
+DATA_DIR = BASE_DIR / "data"
+PROCESSED_PATH = DATA_DIR / "processed"
+
 
 st.set_page_config(page_title="TaskLab", layout="wide")
 
@@ -12,12 +18,12 @@ Forecasting Taskmaster outcomes using simulation and historical patterns.
 ⚠️ Not for betting use
 """)
 
-# Placeholder data (replace later)
-data = pd.DataFrame({
-    "contestant": ["A", "B", "C", "D", "E"],
-    "win_probability": [0.42, 0.33, 0.15, 0.07, 0.03]
-})
+# DUMMY DATA
+data = pd.read_csv(PROCESSED_PATH / "latest_snapshot.csv")
+
+# tidy display
+data["win_probability"] = data["win_probability"].round(3)
+data["current_rank"] = data["current_rank"].astype(int)
 
 st.subheader("Latest win probabilities")
-
-st.dataframe(data)
+st.dataframe(data, hide_index=True)
