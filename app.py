@@ -7,6 +7,18 @@ BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = BASE_DIR / "data"
 PROCESSED_PATH = DATA_DIR / "processed"
 
+required_files = [
+    PROCESSED_PATH / "latest_snapshot.csv",
+    PROCESSED_PATH / "win_probability_trajectory.csv",
+    PROCESSED_PATH / "score_trajectory.csv",
+]
+
+missing = [str(p.name) for p in required_files if not p.exists()]
+
+if missing:
+    st.error(f"Missing required data files: {', '.join(missing)}")
+    st.stop()
+
 
 # ---- PAGE CONFIG ----
 
