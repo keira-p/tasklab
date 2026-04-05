@@ -1,5 +1,6 @@
-pandas
-numpy
+altair
 matplotlib
+numpy
+pandas
 scikit-learn
 streamlit
