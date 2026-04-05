@@ -108,7 +108,7 @@ Contestants were also grouped into performance archetypes based on scoring patte
 | 🔥 **The Chaos Engine** aka Elite but Chaotic          | High scoring but inconsistent |
 | 🎯 **The Silent Assassin** aka Strong & Consistent.     | High and reliable performers |
 | 🎢 **The Late Bloomer** aka Chaotic Improvers           | Volatile but improving over time |
-| 🏁 **The Early Leader** aka Strong early, decline later |
+| 🏁 **The Early Leader** aka Solid but Fading            | Strong early, decline later  |
 | 🍍 **The Underdog** aka Strugglers                      | Lower scoring and not improving |
 
 These archetypes help explain *why* different contestants have different win probabilities.
