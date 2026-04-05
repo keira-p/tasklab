@@ -67,6 +67,7 @@ tasklab/
 │       └── score_trajectory.csv
 ├── notebooks/                    # Exploration & modelling
 ├── requirements.txt
+```
 
 ---
 
