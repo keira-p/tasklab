@@ -99,16 +99,19 @@ The project then moves beyond point prediction to **probabilistic simulation**.
 - This is implemented using a Monte Carlo approach, simulating many possible series outcomes
 - Together, they provide a more realistic view of possible outcomes
 
+
 ### Archetypes
 
-Contestants were also grouped into performance archetypes based on scoring patterns:
+To better understand differences in performance and outcomes, contestants were grouped into archetypes based on their scoring patterns.
 
-| Archetype                                               | Description |
-|---------------------------------------------------------|------------|
-| 🔥 **The Chaos Engine** aka Elite but Chaotic          | High scoring but inconsistent |
-| 🎯 **The Silent Assassin** aka Strong & Consistent.     | High and reliable performers |
-| 🎢 **The Late Bloomer** aka Chaotic Improvers           | Volatile but improving over time |
-| 🏁 **The Early Leader** aka Solid but Fading            | Strong early, decline later  |
-| 🍍 **The Underdog** aka Strugglers                      | Lower scoring and not improving |
+These archetypes help explain *why* some contestants have higher or lower win probabilities — not just how they are currently performing.
 
-These archetypes help explain *why* different contestants have different win probabilities.
+| Archetype | Description |
+|----------|------------|
+| 🔥 **The Chaos Engine** *(Elite but Chaotic)* | High scoring but inconsistent, capable of big swings that make outcomes less predictable |
+| 🎯 **The Silent Assassin** *(Strong & Consistent)* | High and reliable performers, steadily accumulate points and maintain strong win probabilities |
+| 🎢 **The Late Bloomer** *(Chaotic Improvers)* | Volatile early, but improving over time, may become serious contenders as the series progresses |
+| 🏁 **The Early Leader** *(Strong early, decline later)* | Strong initial performance followed by decline, early advantage may not hold |
+| 🍍 **The Underdog** *(Strugglers)* | Lower scoring with limited improvement, unlikely to contend without a significant shift in performance |
+
+For example, “Strong & Consistent” contestants tend to maintain high win probabilities, while “Chaotic” performers may fluctuate more depending on recent results.
