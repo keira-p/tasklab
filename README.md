@@ -106,12 +106,12 @@ To better understand differences in performance and outcomes, contestants were g
 
 These archetypes help explain *why* some contestants have higher or lower win probabilities — not just how they are currently performing.
 
-| Archetype | Description |
-|----------|------------|
-| 🔥 **The Chaos Engine** | *Elite but chaotic*. High scoring but inconsistent, capable of big swings that make outcomes less predictable. |
-| 🎯 **The Silent Assassin** | *Strong and consistent*. High and reliable performers, steadily accumulate points and maintain strong win probabilities. |
-| 🎢 **The Late Bloomer** | *Chaotic improvers*. Volatile early, but improving over time, may become serious contenders as the series progresses. |
-| 🏁 **The Early Leader** | *Strong early, decline later*. Early advantage may not hold. |
-| 🍍 **The Underdog** | *Strugglers*. Lower scoring with limited improvement, unlikely to contend without a significant shift in performance. |
+| Archetype                   | Description |
+|-----------------------------|------------|
+| 🔥 **The Chaos Engine**     | *Elite but chaotic*. High scoring but inconsistent, capable of big swings that make outcomes less predictable. |
+| 🎯 **The Silent Assassin**  | *Strong and consistent*. High and reliable performers, steadily accumulate points and maintain strong win probabilities. |
+| 🎢 **The Late Bloomer**     | *Chaotic improvers*. Volatile early, but improving over time, may become serious contenders as the series progresses. |
+| 🏁 **The Early Leader**     | *Strong early, decline later*. Early advantage may not hold. |
+| 🍍 **The Underdog**         | *Strugglers*. Lower scoring with limited improvement, unlikely to contend without a significant shift in performance. |
 
-For example, "Chaoe Engine" contestants tend to maintain high win probabilities, while “Later Bloomer” performers may fluctuate more depending on recent results.
+For example, "Chaos Engine" contestants tend to maintain high win probabilities, while “Later Bloomer” performers may fluctuate more depending on recent results.
