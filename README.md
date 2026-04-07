@@ -108,10 +108,10 @@ These archetypes help explain *why* some contestants have higher or lower win pr
 
 | Archetype | Description |
 |----------|------------|
-| 🔥 **The Chaos Engine** *(Elite but Chaotic)* | High scoring but inconsistent, capable of big swings that make outcomes less predictable |
-| 🎯 **The Silent Assassin** *(Strong & Consistent)* | High and reliable performers, steadily accumulate points and maintain strong win probabilities |
-| 🎢 **The Late Bloomer** *(Chaotic Improvers)* | Volatile early, but improving over time, may become serious contenders as the series progresses |
-| 🏁 **The Early Leader** *(Strong early, decline later)* | Strong initial performance followed by decline, early advantage may not hold |
-| 🍍 **The Underdog** *(Strugglers)* | Lower scoring with limited improvement, unlikely to contend without a significant shift in performance |
+| 🔥 **The Chaos Engine** | *Elite but chaotic*. High scoring but inconsistent, capable of big swings that make outcomes less predictable. |
+| 🎯 **The Silent Assassin** | *Strong and consistent*. High and reliable performers, steadily accumulate points and maintain strong win probabilities. |
+| 🎢 **The Late Bloomer** | *Chaotic improvers*. Volatile early, but improving over time, may become serious contenders as the series progresses. |
+| 🏁 **The Early Leader** | *Strong early, decline later*. Early advantage may not hold. |
+| 🍍 **The Underdog** | *Strugglers*. Lower scoring with limited improvement, unlikely to contend without a significant shift in performance. |
 
-For example, “Strong & Consistent” contestants tend to maintain high win probabilities, while “Chaotic” performers may fluctuate more depending on recent results.
+For example, "Chaoe Engine" contestants tend to maintain high win probabilities, while “Later Bloomer” performers may fluctuate more depending on recent results.
