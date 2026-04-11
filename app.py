@@ -68,11 +68,6 @@ as the series unfolds, and how that picture changes week by week.
 we're big fans and hope this adds a bit of extra fun for fellow enthusiasts.*
 """)
 
-# st.info("""
-# ⚠️ This is currently using dummy data for demonstration purposes.
-# Real episode results and live updates will be added once the new series begins.
-# """)
-
 # ---- LATEST RESULTS ----
 
 st.subheader("💡 Latest Results")
@@ -81,6 +76,18 @@ st.write(
     Early results can swing quickly. This dashboard shows both latest scores, ranking, and how likely each contestant is to win.
     """
 )
+
+st.info("""
+📺 **Episode 1 is in.**
+
+Joanna makes a strong start, and the model is already taking notice.
+
+Historically though, this forecast only really becomes useful once we’re a bit further into the series.
+
+With 9 episodes still to go, this is very much an **early snapshot** - and there’s plenty of time for things to change.
+
+We’ll be updating it each week as the picture becomes clearer.
+""")
 
 # Results table
 display_df = latest_snapshot.rename(columns={
