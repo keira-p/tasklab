@@ -68,10 +68,10 @@ as the series unfolds, and how that picture changes week by week.
 we're big fans and hope this adds a bit of extra fun for fellow enthusiasts.*
 """)
 
-st.info("""
-⚠️ This is currently using dummy data for demonstration purposes.
-Real episode results and live updates will be added once the new series begins.
-""")
+# st.info("""
+# ⚠️ This is currently using dummy data for demonstration purposes.
+# Real episode results and live updates will be added once the new series begins.
+# """)
 
 # ---- LATEST RESULTS ----
 
