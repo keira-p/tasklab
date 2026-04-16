@@ -117,13 +117,13 @@ st.write(
 )
 
 st.info("""
-📺 **Episode 1 is in.**
+📺 **Episode 2 is in.**
 
-Joanna makes a strong start, and the model already reflects that -  assigning her a very high early win probability.
+Amy takes the episode win and closes the gap, but the model still strongly favours Joanna overall.
 
-At this stage, predictions are highly sensitive to single-episode results. Historically, the model becomes more reliable as more data accumulates.
+That's because early forecasts are driven more by cumulative position than single standout performances - consistency is starting to matter more than one big result.
 
-With 9 episodes still to go, this is very much an early snapshot - and there’s plenty of time for things to change.
+With two episodes in, we're starting to see some separation, but it's still early. A couple of big swings can quickly reshape the picture from here.
 """)
 
 # Results table
