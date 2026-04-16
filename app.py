@@ -80,7 +80,7 @@ score_trajectory["contestant"] = score_trajectory["contestant"].apply(get_first_
 
 # ---- NAVIGATION ----
 st.markdown("**📊 Dashboard** (👈 you're here!)")
-st.page_link("pages/2_🧬_Archetypes.py", label="🧬 Archetypes")
+st.page_link("pages/1_🧬_Archetypes.py", label="🧬 Archetypes")
 
 
 # ---- HEADER ----
