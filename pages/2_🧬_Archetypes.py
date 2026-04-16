@@ -51,7 +51,7 @@ PROCESSED_PATH = BASE_DIR / "data" / "processed"
 
 
 # ---- NAVIGATION ----
-st.page_link("1_📊_Dashboard.py", label="📊 Dashboard")
+st.page_link("app.py", label="📊 Dashboard")
 st.markdown("**🧬 Archetypes** (👈 you're here!)")
 
 
