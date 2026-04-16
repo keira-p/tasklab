@@ -20,6 +20,34 @@ if missing:
     st.stop()
 
 
+# ---- STYLING ----
+
+st.markdown("""
+<style>
+/* Headings */
+h1, h2, h3 {
+    color: #4C1D5A;
+}
+
+/* Progress bars */
+div[data-testid="stProgressBar"] > div > div {
+    background-color: #5B2A6E;
+}
+
+/* Subtle card border enhancement */
+[data-testid="stMarkdownContainer"] > div {
+    border-radius: 12px;
+}
+
+/* Expander header */
+[data-testid="stExpander"] summary {
+    font-weight: 600;
+    color: #5B2A6E;
+}
+</style>
+""", unsafe_allow_html=True)
+
+
 # ---- PAGE CONFIG ----
 
 st.set_page_config(
@@ -50,26 +78,37 @@ win_probability_trajectory["contestant"] = win_probability_trajectory["contestan
 score_trajectory["contestant"] = score_trajectory["contestant"].apply(get_first_name)
 
 
-# ---- HEADER ----
+# ---- NAVIGATION ----
+st.markdown("**📊 Dashboard** (👈 you're here!)")
+st.page_link("pages/2_🧬_Archetypes.py", label="🧬 Archetypes")
 
+
+# ---- HEADER ----
 st.title("🍍 TaskLab: Taskmaster Forecast")
 
 st.markdown("""
+<div style="
+    background-color: rgba(91, 42, 110, 0.06);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+">
+
 **Welcome to TaskLab!**
 
 TaskLab is a playful data project exploring how predictable the world of
 Taskmaster really is, and providing insights into who might take that coveted
 trophy home.
 
-Using simulation and historical patterns, we estimate who’s most likely to win
+Using simulation and historical patterns, we estimate who's most likely to win
 as the series unfolds, and how that picture changes week by week.
 
-*We’re in no way affiliated with Taskmaster or its creators (we wish!), but
+*We're in no way affiliated with Taskmaster or its creators (we wish!), but
 we're big fans and hope this adds a bit of extra fun for fellow enthusiasts.*
-""")
+""", unsafe_allow_html=True)
+
 
 # ---- LATEST RESULTS ----
-
 st.subheader("💡 Latest Results")
 st.write(
     """
@@ -80,13 +119,11 @@ st.write(
 st.info("""
 📺 **Episode 1 is in.**
 
-Joanna makes a strong start, and the model is already taking notice.
+Joanna makes a strong start, and the model already reflects that -  assigning her a very high early win probability.
 
-Historically though, this forecast only really becomes useful once we’re a bit further into the series.
+At this stage, predictions are highly sensitive to single-episode results. Historically, the model becomes more reliable as more data accumulates.
 
-With 9 episodes still to go, this is very much an **early snapshot** - and there’s plenty of time for things to change.
-
-We’ll be updating it each week as the picture becomes clearer.
+With 9 episodes still to go, this is very much an early snapshot - and there’s plenty of time for things to change.
 """)
 
 # Results table
@@ -203,15 +240,28 @@ with col2:
 
 # ---- METHODS ----
 
-with st.expander("🔍 How does it work?", expanded=True):
+with st.expander("🔍 How does it work?", expanded=False):
     st.markdown("""
-Our forecasts are generated through a simulation approach that models
-the dynamics of Taskmaster episodes. Here's a high-level overview of how we create our predictions:
+    <div style="
+        background-color: rgba(91, 42, 110, 0.06);
+        padding: 16px;
+        border-radius: 10px;
+    ">
 
-- Episode scores are added after each new episode
-- Current performance is summarised per contestant
-- The remaining series is simulated many times
-- Win probability reflects how often each contestant wins across those simulations
+*This is a simplified overview - for a more detailed explanation of the methods and data, check out the [GitHub repo](https://github.com/keira-p/tasklab).*
 
-⚠️ This is a fan-made data project for entertainment and analysis only.
-""")
+**How are the forecasts generated?**
+
+We simulate the remainder of the series thousands of times to estimate each contestant's chances of winning.
+
+- Episode scores are updated after each new episode
+- Each contestant's current performance is summarised (average score, consistency, etc.)
+- The remaining episodes are simulated many times based on these profiles
+- Final rankings are recorded for each simulation
+
+A contestant's win probability reflects how often they win across all simulations.
+
+With limited data early in a series, predictions are highly uncertain - but as more episodes air, accuracy improves significantly (historically reaching ~90% by the final episodes).
+
+⚠️ *This is a fan-made data project for entertainment and analysis only.*
+""", unsafe_allow_html=True)
