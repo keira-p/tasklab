@@ -1,5 +1,9 @@
 from pathlib import Path
+from pyexpat import features
 import pandas as pd
+import numpy as np
+
+from sklearn.preprocessing import StandardScaler
 
 from simulation import simulate_many_from_snapshot
 
@@ -139,6 +143,125 @@ def build_latest_snapshot(results_so_far, win_probs):
     ]
 
 
+def build_latest_archetype_features(results_so_far, global_std):
+    """
+    Build the latest archetype features for each contestant in the new series.
+
+    Inputs:
+    - results_so_far: DataFrame with columns ["contestant", "episode", "episode_score"]
+
+    Output:
+    - features: DataFrame with columns ["contestant", "avg_score", "avg_std", "avg_momentum"]
+    """
+
+    df = results_so_far.sort_values(["contestant", "episode"])
+
+    # Mean and std
+    features = (
+        df.groupby("contestant")["episode_score"]
+        .agg(["mean", "std"])
+        .reset_index()
+        .rename(columns={
+            "mean": "avg_score",
+            "std": "avg_std"
+        })
+    )
+
+    # Latest score per contestant
+    latest_score = (
+        df.groupby("contestant")
+        .tail(1)[["contestant", "episode_score"]]
+        .rename(columns={"episode_score": "latest_episode_score"})
+    )
+
+    # Merge before calculating momentum
+    features = features.merge(latest_score, on="contestant", how="left")
+
+    # Momentum: latest vs average
+    features["avg_momentum"] = (
+        features["latest_episode_score"] - features["avg_score"]
+    )
+
+    # Clean up
+    features["avg_std"] = features["avg_std"].fillna(global_std)
+    features["avg_std"] = features["avg_std"].replace(0, global_std)
+    features["avg_momentum"] = features["avg_momentum"].fillna(0)
+
+    print("Latest archetype features:")
+    print(features)
+
+    return features[["contestant", "avg_score", "avg_std", "avg_momentum"]]
+
+
+def load_archetype_model(processed_path):
+    """
+    Load the saved archetype celntroids and scaler parameters.
+
+    Output:
+    - scaler: StandardScaler object fitted on the original archetype features
+    - centroids: DataFrame with columns ["archetype_name", "avg_score", "avg_std", "avg_momentum"]
+    """
+
+    feature_cols = ["avg_score", "avg_std", "avg_momentum"]
+
+    raw_centroids = pd.read_csv(PROCESSED_PATH / "archetype_centroids.csv", index_col=0)
+    scaler_params = pd.read_csv(PROCESSED_PATH / "archetype_scaler.csv")
+
+    # Rebuild scaler
+    scaler = StandardScaler()
+    scaler.mean_ = scaler_params["mean"].values
+    scaler.scale_ = scaler_params["std"].values
+    scaler.n_features_in_ = len(feature_cols)
+    scaler.feature_names_in_ = np.array(feature_cols)
+
+    # Scale centroids
+    centroids = pd.DataFrame(
+        scaler.transform(raw_centroids[feature_cols]),
+        index=raw_centroids.index,
+        columns=feature_cols
+    )
+
+    return scaler, centroids
+
+
+def assign_nearest_archetype(row, centroids, scaler):
+    """
+    Assign the nearest archetype to a contestant based on distance to scaled centroids.
+
+    Inputs:
+    - row: Series with index ["contestant", "avg_score", "avg_std", "avg_momentum"]
+    - centroids: DataFrame with columns ["archetype_name", "avg_score", "avg_std", "avg_momentum"]
+    - scaler: StandardScaler object fitted on the original archetype features
+
+    Output:
+    - archetype_name: Name of the nearest archetype
+    """
+
+    best_archetype = None
+    best_distance = float("inf")
+
+    contestant_features = pd.DataFrame([{
+        "avg_score": row["avg_score"],
+        "avg_std": row["avg_std"],
+        "avg_momentum": row["avg_momentum"]
+    }])
+
+    contestant_scaled = scaler.transform(contestant_features)[0]
+
+    # Loop through centroids to find nearest archetype
+    for archetype_name, centroid in centroids.iterrows():
+
+        # Calculate Euclidean distance to the centroid
+        distance = np.linalg.norm(contestant_scaled - centroid)
+
+        # Update best archetype if this one is closer
+        if distance < best_distance:
+            best_distance = distance
+            best_archetype = archetype_name
+
+    return best_archetype
+
+
 def main():
     """
     Update live outputs based on the latest results.
@@ -159,6 +282,8 @@ def main():
     live_results = pd.read_csv(LIVE_PATH / "live_results.csv")
     snapshot_df = pd.read_csv(PROCESSED_PATH / "snapshot_df.csv")
 
+    scaler, centroids = load_archetype_model(PROCESSED_PATH)
+
     global_std = snapshot_df["episode_score"].std()
 
     # Latest snapshot
@@ -177,8 +302,6 @@ def main():
         live_results,
         win_probs
     )
-
-    latest_snapshot.to_csv(PROCESSED_PATH / "latest_snapshot.csv", index=False)
 
     # Win probability trajectory
     trajectory = []
@@ -214,7 +337,24 @@ def main():
 
     score_trajectory.to_csv(PROCESSED_PATH / "score_trajectory.csv", index=False)
 
+    # Latest archetype features
+    live_archetype_features = build_latest_archetype_features(live_results, global_std)
+    live_archetype_features["archetype_name"] = live_archetype_features.apply(
+        assign_nearest_archetype,
+        axis=1,
+        centroids=centroids,
+        scaler=scaler
+    )
+    latest_snapshot = latest_snapshot.merge(
+        live_archetype_features[["contestant", "archetype_name"]],
+        on="contestant",
+        how="left"
+    )
+
+    latest_snapshot.to_csv(PROCESSED_PATH / "latest_snapshot.csv", index=False)
+
     print("✅ Live outputs updated successfully.")
+    print("✅ Live archetype features added to latest snapshot.")
 
 
 if __name__ == "__main__":
