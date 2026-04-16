@@ -265,3 +265,38 @@ With limited data early in a series, predictions are highly uncertain - but as m
 
 ⚠️ *This is a fan-made data project for entertainment and analysis only.*
 """, unsafe_allow_html=True)
+
+
+# ---- STORY SO FAR ----
+
+with st.expander("📺 The story so far", expanded=False):
+    st.markdown("""
+    <div style="
+        background-color: rgba(91, 42, 110, 0.06);
+        padding: 16px;
+        border-radius: 10px;
+    ">
+
+*Here's a quick recap of how Series 21 is unfolding.*
+
+##### Episode 1
+
+🏆 Winner: **Joanna**
+
+Joanna makes a strong start, and the model already reflects that -  assigning her a very high early win probability.
+
+At this stage, predictions are highly sensitive to single-episode results. Historically, the model becomes more reliable as more data accumulates.
+
+With 9 episodes still to go, this is very much an early snapshot - and there’s plenty of time for things to change.
+
+
+##### Episode 2 (latest episode)
+
+🏆 Winner: **Amy**
+
+Amy takes the episode win and closes the gap, but the model still strongly favours Joanna overall.
+
+That's because early forecasts are driven more by cumulative position than single standout performances - consistency is starting to matter more than one big result.
+
+With two episodes in, we're starting to see some separation, but it's still early. A couple of big swings can quickly reshape the picture from here.
+""", unsafe_allow_html=True)
