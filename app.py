@@ -117,13 +117,15 @@ st.write(
 )
 
 st.info("""
-📺 **Episode 2 is in.**
+📺 **Episode 3 is in.**
 
-Amy takes the episode win and closes the gap, but the model still strongly favours Joanna overall.
+Amy takes the episode win and edges into the overall lead, with the model now leaning strongly in her favour.
 
-That's because early forecasts are driven more by cumulative position than single standout performances - consistency is starting to matter more than one big result.
+With three episodes in, we're starting to move beyond the early noise - cumulative performance is beginning to matter more, and the gaps are becoming a bit more informative.
 
-With two episodes in, we're starting to see some separation, but it's still early. A couple of big swings can quickly reshape the picture from here.
+Joanna remains close behind, and with 7 episodes still to go, there's plenty of time for the picture to change again.
+
+For now though, this is the first point where the forecast starts to feel a little more meaningful.
 """)
 
 # Results table
@@ -290,7 +292,7 @@ At this stage, predictions are highly sensitive to single-episode results. Histo
 With 9 episodes still to go, this is very much an early snapshot - and there’s plenty of time for things to change.
 
 
-##### Episode 2 (latest episode)
+##### Episode 2
 
 🏆 Winner: **Amy**
 
@@ -299,4 +301,17 @@ Amy takes the episode win and closes the gap, but the model still strongly favou
 That's because early forecasts are driven more by cumulative position than single standout performances - consistency is starting to matter more than one big result.
 
 With two episodes in, we're starting to see some separation, but it's still early. A couple of big swings can quickly reshape the picture from here.
+
+
+##### Episode 3 (latest episode)
+
+🏆 Winner: **Amy**
+
+Amy takes the episode win and edges into the overall lead, with the model now leaning strongly in her favour.
+
+With three episodes in, we're starting to move beyond the early noise - cumulative performance is beginning to matter more, and the gaps are becoming a bit more informative.
+
+Joanna remains close behind, and with 7 episodes still to go, there's plenty of time for the picture to change again.
+
+For now though, this is the first point where the forecast starts to feel a little more meaningful.
 """, unsafe_allow_html=True)
