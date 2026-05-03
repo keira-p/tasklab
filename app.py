@@ -20,6 +20,10 @@ if missing:
     st.stop()
 
 
+# --- HIDE SIDEBAR ---
+st.set_page_config(initial_sidebar_state="collapsed")
+
+
 # ---- STYLING ----
 
 st.markdown("""
@@ -117,15 +121,17 @@ st.write(
 )
 
 st.info("""
-📺 **Episode 3 is in.**
+📺 **Episode 4 is in.**
 
-Amy takes the episode win and edges into the overall lead, with the model now leaning strongly in her favour.
+Joel takes the episode win, but Amy holds onto the overall lead - and the model isn't changing its mind just yet.
 
-With three episodes in, we're starting to move beyond the early noise - cumulative performance is beginning to matter more, and the gaps are becoming a bit more informative.
+With four episodes in, the early chaos is starting to give way to something more consistent. Amy and Joanna have begun to separate themselves from the pack, and the forecast is increasingly focused on that battle at the top.
 
-Joanna remains close behind, and with 7 episodes still to go, there's plenty of time for the picture to change again.
+Joanna has closed the gap slightly this week, so there's still plenty to play for - but with 6 episodes still to go, consistency is starting to count for more than one big night.
 
-For now though, this is the first point where the forecast starts to feel a little more meaningful.
+We're also starting to see the [first archetype split](./Archetypes): Joel has broken away as our first **Late Bloomer**, while the rest of the field is still very much operating in **Chaos Engine** territory.
+
+We'll be updating things each week as the picture becomes clearer.
 """)
 
 # Results table
@@ -303,7 +309,7 @@ That's because early forecasts are driven more by cumulative position than singl
 With two episodes in, we're starting to see some separation, but it's still early. A couple of big swings can quickly reshape the picture from here.
 
 
-##### Episode 3 (latest episode)
+##### Episode 3
 
 🏆 Winner: **Amy**
 
@@ -314,4 +320,19 @@ With three episodes in, we're starting to move beyond the early noise - cumulati
 Joanna remains close behind, and with 7 episodes still to go, there's plenty of time for the picture to change again.
 
 For now though, this is the first point where the forecast starts to feel a little more meaningful.
+
+
+##### Episode 4 (latest episode)
+
+🏆 Winner: **Joel**
+
+Joel takes the episode win, but Amy holds onto the overall lead - and the model isn't changing its mind just yet.
+
+With four episodes in, the early chaos is starting to give way to something more consistent. Amy and Joanna have begun to separate themselves from the pack, and the forecast is increasingly focused on that battle at the top.
+
+Joanna has closed the gap slightly this week, so there's still plenty to play for - but with 6 episodes still to go, consistency is starting to count for more than one big night.
+
+We're also starting to see the [first archetype split](./Archetypes): Joel has broken away as our first **Late Bloomer**, while the rest of the field is still very much operating in **Chaos Engine** territory.
+
+We'll be updating things each week as the picture becomes clearer.
 """, unsafe_allow_html=True)
