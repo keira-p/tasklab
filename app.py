@@ -121,17 +121,17 @@ st.write(
 )
 
 st.info("""
-📺 **Episode 4 is in.**
+📺 **Episode 5 is in.**
 
-Joel takes the episode win, but Amy holds onto the overall lead - and the model isn't changing its mind just yet.
+Joanna edges back into the overall lead - by just a single point - and for the first time since Episode 2, the model has flipped back in her favour.
 
-With four episodes in, the early chaos is starting to give way to something more consistent. Amy and Joanna have begun to separate themselves from the pack, and the forecast is increasingly focused on that battle at the top.
+With five episodes in, this is starting to look less like a runaway lead and more like a two-horse race. Amy remains right on her heels, and the forecast is now reacting to every small swing at the top.
 
-Joanna has closed the gap slightly this week, so there's still plenty to play for - but with 6 episodes still to go, consistency is starting to count for more than one big night.
+Further down the leaderboard, the chasing pack is still putting up strong scores, but for now the model sees this as Joanna vs Amy.
 
-We're also starting to see the [first archetype split](./Archetypes): Joel has broken away as our first **Late Bloomer**, while the rest of the field is still very much operating in **Chaos Engine** territory.
+We're also seeing more separation in the archetypes, with Armando now joining Joel in **Late Bloomer** territory.
 
-We'll be updating things each week as the picture becomes clearer.
+With half the series still to play, we may finally have a proper contest on our hands.
 """)
 
 # Results table
@@ -322,7 +322,7 @@ Joanna remains close behind, and with 7 episodes still to go, there's plenty of 
 For now though, this is the first point where the forecast starts to feel a little more meaningful.
 
 
-##### Episode 4 (latest episode)
+##### Episode 4
 
 🏆 Winner: **Joel**
 
@@ -335,4 +335,19 @@ Joanna has closed the gap slightly this week, so there's still plenty to play fo
 We're also starting to see the [first archetype split](./Archetypes): Joel has broken away as our first **Late Bloomer**, while the rest of the field is still very much operating in **Chaos Engine** territory.
 
 We'll be updating things each week as the picture becomes clearer.
+
+
+##### Episode 5 (latest episode)
+
+🏆 Winner: **Armando**
+
+Joanna edges back into the overall lead - by just a single point - and for the first time since Episode 2, the model has flipped back in her favour.
+
+With five episodes in, this is starting to look less like a runaway lead and more like a two-horse race. Amy remains right on her heels, and the forecast is now reacting to every small swing at the top.
+
+Further down the leaderboard, the chasing pack is still putting up strong scores, but for now the model sees this as Joanna vs Amy.
+
+We're also seeing more separation in the archetypes, with Armando now joining Joel in **Late Bloomer** territory.
+
+With half the series still to play, we may finally have a proper contest on our hands.
 """, unsafe_allow_html=True)
